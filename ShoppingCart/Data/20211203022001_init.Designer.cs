@@ -65,7 +65,7 @@ namespace ShoppingCart.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Stock")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("IdItem");

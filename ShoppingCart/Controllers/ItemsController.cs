@@ -59,7 +59,7 @@ namespace ShoppingCart.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdItem,Name,Description,Price,Stock")] Items items)
+        public async Task<IActionResult> Create([Bind("IdItem,Name,Description,Price,Quantity")] Items items)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace ShoppingCart.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("IdItem,Name,Description,Price,Stock")] Items items)
+        public async Task<IActionResult> Edit(Guid id, [Bind("IdItem,Name,Description,Price,Quantity")] Items items)
         {
             if (id != items.IdItem)
             {
