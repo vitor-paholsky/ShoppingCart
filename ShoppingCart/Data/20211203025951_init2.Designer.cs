@@ -10,8 +10,8 @@ using ShoppingCart.Data;
 namespace ShoppingCart.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211202035953_initial")]
-    partial class initial
+    [Migration("20211203025951_init2")]
+    partial class init2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -65,7 +65,7 @@ namespace ShoppingCart.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Stock")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("IdItem");
