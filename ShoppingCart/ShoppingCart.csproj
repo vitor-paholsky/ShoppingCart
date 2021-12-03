@@ -6,6 +6,10 @@
 
   <ItemGroup>
     <Compile Remove="Data\.cs" />
+    <Compile Remove="Data\20211202035953_initial.cs" />
+    <Compile Remove="Data\20211202035953_initial.Designer.cs" />
+    <Compile Remove="Data\20211203021536_inital.cs" />
+    <Compile Remove="Data\20211203021536_inital.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

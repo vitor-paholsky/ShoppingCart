@@ -26,7 +26,8 @@ namespace ShoppingCart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<ApplicationDbContext>();  
+            services.AddDbContext<ApplicationDbContext>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

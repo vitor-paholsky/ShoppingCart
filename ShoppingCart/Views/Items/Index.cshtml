@@ -4,7 +4,7 @@
     ViewData["Title"] = "Listagem de Produtos no Estoque";
 }
 
-<h1>Administrador: adiciona produtos na loja</h1>
+<h1>Insira produtos no carrinho de compras</h1>
 
 <p>
     <a asp-action="Create">Novo Produto</a>
@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Stock)
+                @Html.DisplayNameFor(model => model.Quantity)
             </th>
             <th></th>
         </tr>
@@ -40,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Stock)
+                @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.IdItem">Alterar</a> |
