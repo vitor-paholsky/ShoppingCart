@@ -29,7 +29,7 @@ namespace ShoppingCart.Migrations
                     Name = table.Column<string>(maxLength: 80, nullable: false),
                     Description = table.Column<string>(maxLength: 1200, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Stock = table.Column<int>(nullable: false)
+                    Quantity = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
