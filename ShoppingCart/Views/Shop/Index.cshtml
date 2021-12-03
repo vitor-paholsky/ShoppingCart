@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Stock)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdItem">Alterar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdItem">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdItem">Excluir</a>
+                <a asp-action="Edit" asp-route-id="@item.Name">Alterar</a> |
+                <a asp-action="Details" asp-route-id="@item.Name">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Name">Excluir</a>
             </td>
         </tr>
 }

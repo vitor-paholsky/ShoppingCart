@@ -10,8 +10,16 @@ namespace ShoppingCart.Models
 {
     public class Items
     {
-        [Key]
-        public Guid IdItem { get; set; }
+        public Guid IdCustomer { get; set; }
+        [Required(ErrorMessage = "Por favor, informe seu nome.")]
+        [MaxLength(80)]
+        public string CustomerName { get; set; }
+        [Required(ErrorMessage = "Por favor, informe um e-mail válido")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "Por favor, informe o CPF")]
+        [MaxLength(11)]
+        public string Cpf { get; set; }
         [Required(ErrorMessage ="É obrigatório informar o nome do produto.")]
         [MaxLength(80)]
         public string Name { get; set; }
@@ -22,7 +30,7 @@ namespace ShoppingCart.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         [Required(ErrorMessage = "É obrigatório informar a quantidade em estoque do produto.")]
-        public int Stock { get; set; }
+        public int Stock { get; set; }           
 
         public Items()
         {

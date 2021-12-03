@@ -71,37 +71,6 @@ namespace ShoppingCart.Controllers
             return View(items);
         }
 
-        // POST: Items/Buy
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Buy([Bind("IdItem,Name,Description,Price")] Items items)
-        {
-            if (ModelState.IsValid)
-            {
-                items.IdItem = Guid.NewGuid();
-                _context.Add(items);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(IndexShop));
-            }
-            return View(items);
-        }
-
-        //Buy item
-        public async Task<IActionResult> Buy(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var items = await _context.Items.FindAsync(id);
-            if (items == null)
-            {
-                return NotFound();
-            }
-            return View(items);
-        }
-
         // GET: Items/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -124,38 +93,6 @@ namespace ShoppingCart.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("IdItem,Name,Description,Price,Stock")] Items items)
-        {
-            if (id != items.IdItem)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(items);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ItemsExists(items.IdItem))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(items);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Buy(Guid id, [Bind("IdItem,Name,Description,Price,Stock")] Items items)
         {
             if (id != items.IdItem)
             {
