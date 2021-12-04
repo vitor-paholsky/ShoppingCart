@@ -49,18 +49,26 @@ namespace ShoppingCart.Controllers
             return View();
         }
 
-        // POST: Customers/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCustomer,Name,Email,Cpf")] Customer customer)
+        public async Task<IActionResult> Create(Customer customer)
         {
             if (ModelState.IsValid)
             {
                 customer.IdCustomer = Guid.NewGuid();
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
+
+                // Relações Itens -> Cliente
+                var itens = await _context.Items.ToListAsync();
+                if (itens != null && itens.Any())
+                {
+                    foreach (var item in itens)
+                        item.IdCustomer = customer.IdCustomer;
+
+                    await _context.SaveChangesAsync();
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             return View(customer);

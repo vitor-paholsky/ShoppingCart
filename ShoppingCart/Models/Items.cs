@@ -22,7 +22,9 @@ namespace ShoppingCart.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         [Required(ErrorMessage = "É obrigatório informar a quantidade em estoque do produto.")]
-        public int Quantity { get; set; }           
+        public int Quantity { get; set; }
+       
+        public Guid? IdCustomer {get;set;}
 
         [NotMapped]
         public decimal valorTotal
