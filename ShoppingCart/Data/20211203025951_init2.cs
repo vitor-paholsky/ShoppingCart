@@ -9,7 +9,6 @@ namespace ShoppingCart.Migrations
             migrationBuilder.DropColumn(
                 name: "Stock",
                 table: "Items");
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
             migrationBuilder.AddColumn<int>(
                 name: "Quantity",
                 table: "Items",

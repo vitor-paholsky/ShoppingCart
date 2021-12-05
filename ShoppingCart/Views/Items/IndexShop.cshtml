@@ -4,10 +4,10 @@
     ViewData["Title"] = "Listagem de Produtos no Estoque";
 }
 
-<h1>Carrinho de compras</h1>
+<h1>Shopping cart</h1>
 
 <p>
-    <a asp-action="Create">Finalizar compra</a>
+    <a asp-controller="Customers" asp-action="Create">Finish Shopping</a>
 </p>
 <table class="table">
     <thead>
@@ -25,7 +25,7 @@
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.valorTotal)
+                @Html.DisplayNameFor(model => model.Total)
             </th>
             <th></th>
         </tr>
@@ -47,10 +47,10 @@
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.valorTotal)
+                    @Html.DisplayFor(modelItem => item.Total)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.IdItem">Detalhes</a>
+                    <a asp-action="Details" asp-route-id="@item.IdItem">Details</a>
                 </td>
             </tr>
         }

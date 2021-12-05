@@ -1,13 +1,13 @@
 ﻿@model ShoppingCart.Models.Items
 
 @{
-    ViewData["Title"] = "Detalhes do produto";
+    ViewData["Title"] = "Product details";
 }
 
 <h1>Details</h1>
 
 <div>
-    <h4><b>Código:</b> @Model.IdItem</h4>
+    <h4><b>Product code:</b> @Model.IdItem</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -37,6 +37,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.IdItem">Editar</a> |
-    <a asp-action="Index">Voltar à listagem</a>
+    <a asp-action="Edit" asp-route-id="@Model.IdItem">Edit</a> |
+    <a asp-action="Index">Back to the list</a>
 </div>

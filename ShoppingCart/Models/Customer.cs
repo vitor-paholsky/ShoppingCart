@@ -19,6 +19,7 @@ namespace ShoppingCart.Models
         [Required(ErrorMessage = "Por favor, informe o CPF")]
         [MaxLength(11)]
         public string Cpf { get; set; }
+        //*public IList<Items> Items { get; set; }
 
         public Customer()
         {
