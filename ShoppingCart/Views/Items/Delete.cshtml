@@ -1,14 +1,14 @@
 ﻿@model ShoppingCart.Models.Items
 
 @{
-    ViewData["Title"] = "Excluir Produto";
+    ViewData["Title"] = "Delete product";
 }
 
 <h1>Delete</h1>
 
-<h3>Deseja realmente excluir o produto?</h3>
+<h3>Do you really wish to delete the product from the list?</h3>
 <div>
-    <h4><b>Código:</b> @Model.IdItem</h4>
+    <h4><b>Code:</b> @Model.IdItem</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -39,7 +39,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdItem" />
-        <input type="submit" value="Excluir" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar à Listagem</a>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to the list</a>
     </form>
 </div>

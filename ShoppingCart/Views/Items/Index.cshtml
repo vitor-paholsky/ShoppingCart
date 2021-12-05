@@ -4,10 +4,10 @@
     ViewData["Title"] = "Listagem de Produtos no Estoque";
 }
 
-<h1>Insira produtos no carrinho de compras</h1>
+<h1>Add items to the shopping cart</h1>
 
 <p>
-    <a asp-action="Create">Novo Produto</a>
+    <a asp-action="Create">New Product</a>
 </p>
 <table class="table">
     <thead>
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdItem">Alterar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdItem">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdItem">Excluir</a>
+                <a asp-action="Edit" asp-route-id="@item.IdItem">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdItem">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdItem">Delete</a>
             </td>
         </tr>
 }

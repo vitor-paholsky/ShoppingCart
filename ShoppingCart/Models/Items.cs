@@ -12,22 +12,26 @@ namespace ShoppingCart.Models
     {
         [Key]
         public Guid IdItem { get; set; }
-        [Required(ErrorMessage = "Por favor, informe o nome do produto.")]
+        [Required(ErrorMessage = "Please, inform the name of the product.")]
         [MaxLength(80)]      
         public string Name { get; set; }
-        [Required(ErrorMessage = "É obrigatório informar a descrição do produto.")]
+        [Required(ErrorMessage = "Please, inform the product description.")]
         [MaxLength(1200)]
         public string Description { get; set; }
-        [Required(ErrorMessage = "É obrigatório informar o preço do produto.")]
-        [Column(TypeName = "decimal(18,2)")]
+        [Required(ErrorMessage = "Please, inform the product price.")]
+        [Range(1, 100)]
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }
-        [Required(ErrorMessage = "É obrigatório informar a quantidade em estoque do produto.")]
+        [Required(ErrorMessage = "Please, inform the quantity.")]
         public int Quantity { get; set; }
        
         public Guid? IdCustomer {get;set;}
 
         [NotMapped]
-        public decimal valorTotal
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Total
         {
             get
             {
